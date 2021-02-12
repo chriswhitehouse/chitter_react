@@ -8,6 +8,22 @@ class App extends Component {
     peeps: [],
   }
 
+  // Code is inovked after the component is mounted/inserted into the DOM tree.
+  componentDidMount() {
+    const url =
+        'https://chitter-backend-api-v2.herokuapp.com/peeps'
+
+    fetch(url)
+      .then((result) => result.json())
+      .then((result) => {
+        console.log(result)
+        this.setState({
+          peeps: result,
+        })
+
+      })
+  }
+
   removePeep = (index) => {
     const {peeps} = this.state
 

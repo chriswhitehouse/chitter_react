@@ -12,9 +12,10 @@ const TableHeader = () => {
 
 const TableBody = (props) => {
   const rows = props.peepData.map((row, index) => {
+    console.log(row)
     return (
       <tr key={index}>
-        <td>{row.peep}</td>
+        <td>{row.body}</td>
         <td>
           <button onClick={() => props.removePeep(index)}>Delete</button>
         </td>
