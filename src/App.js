@@ -1,31 +1,33 @@
 import React, {Component} from 'react'
 import Table from './Table'
 import Form from './Form'
+import Title from './Title'
 
 class App extends Component {
   state = {
-    characters: [],
+    peeps: [],
   }
 
-  removeCharacter = (index) => {
-    const {characters} = this.state
+  removePeep = (index) => {
+    const {peeps} = this.state
 
     this.setState({
-      characters: characters.filter((character, i) => {
+      peeps: peeps.filter((peep, i) => {
         return i !== index
       }),
     })
   }
 
 
-  handleSubmit = (character) => {
-    this.setState({characters: [...this.state.characters, character]})
+  handleSubmit = (peep) => {
+    this.setState({peeps: [...this.state.peeps, peep]})
   }
 
   render() {
     return (
       <div className="container">
-        <Table characterData={this.state.characters} removeCharacter={this.removeCharacter} />
+        <Title />
+        <Table peepData={this.state.peeps} removePeep={this.removePeep} />
         <Form handleSubmit={this.handleSubmit} />
       </div>
     )
