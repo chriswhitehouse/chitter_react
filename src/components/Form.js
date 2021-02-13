@@ -30,6 +30,7 @@ class Form extends Component {
           type="text"
           name="peep"
           id="peep"
+          placeholder="Peep..."
           value={peep}
           onChange={this.handleChange} />
         <input type="button" value="Submit" onClick={this.submitForm} />
