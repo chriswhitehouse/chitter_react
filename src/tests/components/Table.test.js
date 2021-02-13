@@ -1,8 +1,7 @@
 import React from 'react';
 import { configure, shallow, mount } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16'
 import Table from '../../components/Table'
-import TableHeader from '../../components/Table'
+import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 
 configure({ adapter: new Adapter() })
 
