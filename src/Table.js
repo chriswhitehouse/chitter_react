@@ -27,14 +27,14 @@ const TableBody = (props) => {
 }
 
 const Table = (props) => {
-    const {peepData, removePeep} = props
+  const { peepData, removePeep } = props
 
-    return (
-      <table>
-        <TableHeader />
-        <TableBody peepData={peepData} removePeep={removePeep} />
-      </table>
-    )
+  return (
+    <table>
+      <TableHeader />
+      <TableBody peepData={peepData} removePeep={removePeep} />
+    </table>
+  )
 }
 
 export default Table
