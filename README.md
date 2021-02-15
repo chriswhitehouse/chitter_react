@@ -7,46 +7,89 @@ To further develop my understanding of building for client side applications, an
 ## Build status
 [![Build Status](https://travis-ci.com/chriswhitehouse/chitter_react.svg?branch=main)](https://travis-ci.com/chriswhitehouse/chitter_react)
 
-## Code style
-If you're using any code style like xo, standard etc. That will help others while contributing to your project. Ex. -
-
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
-
 ## Screenshots
 Include logo/demo screenshot etc.
 
 ## Tech/framework used
-React.
+React with Jest testing framework.
 
 ## Features
-What makes your project stand out?
+Add and delete peeps. (Note Delete does not delete in backend yet)
 
 ## Code Example
-Show what the library does as concisely as possible, developers should be able to figure out **how** your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.
+App.js
+```js
+import React, {Component} from 'react'
+
+import Table from './Table'
+import Form from './Form'
+import Title from './Title'
+
+class App extends Component {
+  state = {
+    peeps: [],
+  }
+
+  // Code is inovked after the component is mounted/inserted into the DOM tree.
+  componentDidMount() {
+    const url =
+        'https://chitter-backend-api-v2.herokuapp.com/peeps'
+
+    fetch(url)
+      .then((result) => result.json())
+      .then((result) => {
+        this.setState({
+          peeps: result,
+        })
+
+      })
+  }
+
+  removePeep = (index) => {
+    const {peeps} = this.state
+
+    this.setState({
+      peeps: peeps.filter((peep, i) => {
+        return i !== index
+      }),
+    })
+  }
+
+  handleSubmit = (peep) => {
+    console.log(peep)
+    console.log(this.state.peeps)
+    this.setState({peeps: [...this.state.peeps, peep]})
+    console.log(this.state.peeps)
+  }
+
+  render() {
+    return (
+      <div className="container">
+        <Title />
+        <Form handleSubmit={this.handleSubmit} />
+        <Table peepData={this.state.peeps} removePeep={this.removePeep} />
+      </div>
+    )
+  }
+}
+
+export default App
+```
 
 ## Installation
-Provide step by step series of examples and explanations about how to get a development env running.
+* Fork and clone repo.
+* Cd into project folder
+* `$ npm install`
 
 ## API Reference
 
-Depending on the size of the project, if it is small and simple enough the reference docs can be added to the README. For medium size to larger projects it is important to at least provide a link to where the API reference docs live.
+This app is using the the following [backend API](https://github.com/makersacademy/chitter_api_backend)
 
 ## Tests
-Describe and show how to run the tests with code examples.
+`$ npm test` to run tests
+8 passing tests.
 
 ## How to use?
-If people like your project they’ll want to learn how they can use it. To do so include step by step guide to use your project.
+To run locally: `$ npm start`
 
-## Contribute
-
-Let people know how they can contribute into your project. A [contributing guideline](https://github.com/zulip/zulip-electron/blob/master/CONTRIBUTING.md) will be a big plus.
-
-## Credits
-Give proper credits. This could be a link to any repo which inspired you to build this project, any blogposts or links to people who contrbuted in this project.
-
-#### Anything else that seems useful
-
-## License
-A short snippet describing the license (MIT, Apache etc)
-
-MIT © [Yourname]()
+To run from deployment: https://chriswhitehouse.github.io/chitter_react/

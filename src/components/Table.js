@@ -11,13 +11,13 @@ const TableHeader = () => {
 }
 
 const TableBody = (props) => {
-  const rows = props.peepData.reverse().map((row, index) => {
+  const rows = props.peepData.slice().reverse().map((row, index) => {
     console.log(row)
     return (
       <tr key={index}>
         <td>{row.body}</td>
         <td>
-          <button onClick={() => props.removePeep(index)}>Delete</button>
+          <button onClick={() => props.removePeep(props.peepData.length -1 -index)}>Delete</button>
         </td>
       </tr>
     )

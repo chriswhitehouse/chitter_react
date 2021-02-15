@@ -22,7 +22,7 @@ it("renders peeps data", async () => {
   const fakePeepData = [{ body: "Aye Up!" }, { body: "Howdy!" }];
   jest.spyOn(global, "fetch").mockImplementation(() =>
     Promise.resolve({
-      json: () => Promise.resolve(fakePeepData)
+      json: () => Promise.resolve(fakePeepData.slice().reverse())
     })
   );
 
