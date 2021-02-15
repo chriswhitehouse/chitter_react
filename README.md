@@ -8,7 +8,7 @@ To further develop my understanding of building for client side applications, an
 [![Build Status](https://travis-ci.com/chriswhitehouse/chitter_react.svg?branch=main)](https://travis-ci.com/chriswhitehouse/chitter_react)
 
 ## Screenshots
-Include logo/demo screenshot etc.
+![Home Page](https://github.com/chriswhitehouse/chitter_react/blob/main/screenshots/Screenshot%202021-02-15%20at%2021.09.48.png)
 
 ## Tech/framework used
 React with Jest testing framework.
