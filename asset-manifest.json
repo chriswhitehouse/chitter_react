@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/chitter_react/static/css/main.90c48df0.chunk.css",
+    "main.js": "/chitter_react/static/js/main.c24c4914.chunk.js",
+    "main.js.map": "/chitter_react/static/js/main.c24c4914.chunk.js.map",
+    "runtime-main.js": "/chitter_react/static/js/runtime-main.30f18381.js",
+    "runtime-main.js.map": "/chitter_react/static/js/runtime-main.30f18381.js.map",
+    "static/js/2.8c69dfc6.chunk.js": "/chitter_react/static/js/2.8c69dfc6.chunk.js",
+    "static/js/2.8c69dfc6.chunk.js.map": "/chitter_react/static/js/2.8c69dfc6.chunk.js.map",
+    "index.html": "/chitter_react/index.html",
+    "static/css/main.90c48df0.chunk.css.map": "/chitter_react/static/css/main.90c48df0.chunk.css.map",
+    "static/js/2.8c69dfc6.chunk.js.LICENSE.txt": "/chitter_react/static/js/2.8c69dfc6.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.30f18381.js",
+    "static/js/2.8c69dfc6.chunk.js",
+    "static/css/main.90c48df0.chunk.css",
+    "static/js/main.c24c4914.chunk.js"
+  ]
+}
