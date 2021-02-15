@@ -11,7 +11,7 @@ const TableHeader = () => {
 }
 
 const TableBody = (props) => {
-  const rows = props.peepData.map((row, index) => {
+  const rows = props.peepData.reverse().map((row, index) => {
     console.log(row)
     return (
       <tr key={index}>

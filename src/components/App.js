@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+
 import Table from './Table'
 import Form from './Form'
 import Title from './Title'
@@ -16,7 +17,6 @@ class App extends Component {
     fetch(url)
       .then((result) => result.json())
       .then((result) => {
-        console.log(result)
         this.setState({
           peeps: result,
         })
@@ -34,17 +34,19 @@ class App extends Component {
     })
   }
 
-
   handleSubmit = (peep) => {
+    console.log(peep)
+    console.log(this.state.peeps)
     this.setState({peeps: [...this.state.peeps, peep]})
+    console.log(this.state.peeps)
   }
 
   render() {
     return (
       <div className="container">
         <Title />
-        <Table peepData={this.state.peeps} removePeep={this.removePeep} />
         <Form handleSubmit={this.handleSubmit} />
+        <Table peepData={this.state.peeps} removePeep={this.removePeep} />
       </div>
     )
   }

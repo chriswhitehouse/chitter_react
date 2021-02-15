@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 
 class Form extends Component {
   initialState = {
-    peep: '',
+    body: '',
   }
 
   state = this.initialState
@@ -21,17 +21,17 @@ class Form extends Component {
   }
 
   render() {
-    const { peep } = this.state;
+    const { body } = this.state;
 
     return (
       <form>
         <label htmlFor="peep">Peep</label>
         <input
           type="text"
-          name="peep"
-          id="peep"
+          name="body"
+          id="body"
           placeholder="Peep..."
-          value={peep}
+          value={body}
           onChange={this.handleChange} />
         <input type="button" value="Submit" onClick={this.submitForm} />
       </form>
